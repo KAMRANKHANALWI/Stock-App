@@ -24,16 +24,22 @@ function calculateProfitAndLoss(initial, quantity, current) {
         var loss = (initial - current) * quantity;
         var lossPercentage = (loss / initial) * 100;
 
-        console.log(`Hey the loss is ${loss} and the percentage is ${lossPercentage}%`);
+        showOutput(`Hey the loss is ${loss} and the percentage is ${lossPercentage}%`);
     } else if (current > initial) {
         // Profit Logic here
         var profit = (current - initial) * quantity;
         var profitPercentage = (profit / initial) * 100;
 
-        console.log(`Hey the profit is ${profit} and the percentage is ${profitPercentage}`);
+        showOutput(`Hey the profit is ${profit} and the percentage is ${profitPercentage}`);
     } else {
         // the rest of logic 
-        console.log(`No pain no gain and no gain no pain`);
+        showOutput(`No pain no gain and no gain no pain`);
     }
 }
 
+// Output Function
+
+function showOutput(message) {
+
+    outputBox.innerHTML = message;
+}
